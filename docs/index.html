@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Friday Night Funkin' Rust Edition</title>
+  <meta name="description" content="Friday Night Funkin' Rust Edition: reconstrucción del juego con Rust compilado a WebAssembly. Proyecto de fan, no oficial.">
+  <style>
+    :root { --bg:#0b0710; --card:#17101f; --pink:#ff3ea5; --cyan:#36d7f2; --text:#f4eefa; --muted:#a79fb5; }
+    * { box-sizing: border-box; }
+    body { margin:0; background:var(--bg); color:var(--text); font-family: system-ui, -apple-system, "Segoe UI", sans-serif; line-height:1.55; }
+    .wrap { max-width: 880px; margin: 0 auto; padding: 0 16px; }
+    header { padding: 72px 0 32px; text-align:center; }
+    h1 { font-size: clamp(2rem, 6vw, 3.4rem); margin:0 0 12px; line-height:1.1; }
+    .pink { color: var(--pink); }
+    .cyan { color: var(--cyan); }
+    .lead { color: var(--muted); font-size:1.1rem; max-width:640px; margin:0 auto; }
+    .card { background:var(--card); border-radius:14px; padding:24px; margin:24px 0; }
+    h2 { margin:0 0 12px; font-size:1.4rem; }
+    ul { padding-left: 20px; margin: 0; }
+    li { margin: 6px 0; }
+    code, pre { background:#0f0a17; border-radius:8px; }
+    code { padding: 2px 6px; }
+    pre { padding: 14px; overflow-x:auto; font-size:0.95rem; }
+    .btns { display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin: 24px 0 8px; }
+    .btn { background: var(--pink); color:#fff; text-decoration:none; padding:12px 18px; border-radius:10px; font-weight:600; }
+    .btn.alt { background: transparent; border:2px solid var(--cyan); color: var(--cyan); }
+    .notice { color: var(--muted); font-size: 0.9rem; }
+    footer { text-align:center; color:var(--muted); padding: 32px 0 48px; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <h1><span class="pink">Friday Night Funkin'</span><br><span class="cyan">Rust Edition</span></h1>
+    <p class="lead">Una reconstrucción del juego con Rust compilado a WebAssembly, pensada para correr en el navegador junto a la versión JavaScript.</p>
+    <div class="btns">
+      <a class="btn" href="https://github.com/darnellpsych-funkin/friday-night-funkin-rust-edition">Ver código</a>
+      <a class="btn alt" href="https://darnellpsych-funkin.github.io/friday-night-funkin-javascript-edition/">Versión JavaScript</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="card">
+      <h2>Estado del proyecto</h2>
+      <ul>
+        <li>En desarrollo. Esta página es la presentación del proyecto; el juego jugable todavía está en construcción.</li>
+        <li>El primer módulo en Rust es el juicio de notas (Sick, Good, Bad, Shit y Fallo), compilado a WebAssembly. Ya existe en la versión JavaScript como prueba.</li>
+        <li>Los assets de personajes provienen de Bambi-Slice y conservan sus licencias originales.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Compilar el módulo WebAssembly</h2>
+      <p class="notice">Requiere Rust y el target <code>wasm32-unknown-unknown</code>.</p>
+<pre><code>rustup target add wasm32-unknown-unknown
+cargo build --release --target wasm32-unknown-unknown</code></pre>
+    </section>
+
+    <section class="card">
+      <h2>Aviso</h2>
+      <p class="notice">Friday Night Funkin' Rust Edition es un proyecto de fan y no es oficial. Friday Night Funkin' pertenece a The Funkin' Crew.</p>
+    </section>
+  </main>
+
+  <footer>Friday Night Funkin' Rust Edition · Proyecto de fan</footer>
+</body>
+</html>
